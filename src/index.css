@@ -3,4 +3,5 @@
 @tailwind utilities;
 *{
  font-family: 'Gilroy';
+ font-weight: 900;
 }
