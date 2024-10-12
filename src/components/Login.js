@@ -7,15 +7,15 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
+import { Bg_Image, User_Avattar } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const email = useRef(null);
   const password = useRef(null);
@@ -42,7 +42,7 @@ const Login = () => {
           updateProfile(user, {
             displayName: name.current.value,
             photoURL:
-              "https://i.pinimg.com/736x/03/eb/d6/03ebd625cc0b9d636256ecc44c0ea324.jpg",
+             User_Avattar,
           })
             .then(() => {
               // Profile updated!
@@ -55,8 +55,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -81,8 +79,8 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          // console.log(user);
+
           // ...
         })
         .catch((error) => {
@@ -100,7 +98,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/47c2bc92-5a2a-4f33-8f91-4314e9e62ef1/web/IN-en-20240916-TRIFECTA-perspective_72df5d07-cf3f-4530-9afd-8f1d92d7f1a8_small.jpg"
+          src={Bg_Image}
           alt="bg-image"
         />
       </div>
