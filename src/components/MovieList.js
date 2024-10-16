@@ -2,10 +2,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
-  console.log(movies);
-  // movies.map((data)=>{
-  //  return console.log(data)
-  // })
+  
 
   return (
     <div className="px-6 ">
