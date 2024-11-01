@@ -82,7 +82,7 @@ const Header = () => {
           <img className="w-12 h-12  " src={user?.photoURL} alt="userIcon" />
           <button
             onClick={handleSignOut}
-            className="text-white rounded-lg font-semibold"
+            className="text-white h-12 bg-red-800 mx-2 px-4 rounded-lg hover:bg-red-600 transition duration-300 ease-in-out"
           >
             Sign Out
           </button>
